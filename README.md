@@ -31,6 +31,7 @@ scene.render sprite, x_pos, y_pos
 ## License
 
 Copyright (c) 2011, Rasmus Bang Grouleff
+
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
