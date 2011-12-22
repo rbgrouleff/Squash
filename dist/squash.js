@@ -48,15 +48,22 @@
     };
   }
   return this.require.define;
-}).call(this)({"squash": function(exports, require, module) {(function() {
+}).call(this)({"screen": function(exports, require, module) {(function() {
 
-  exports.Squash = (function() {
+  module.exports = (function() {
 
     function _Class() {}
 
     return _Class;
 
   })();
+
+}).call(this);
+}, "squash": function(exports, require, module) {(function() {
+
+  module.exports = {
+    Screen: require('./screen')
+  };
 
 }).call(this);
 }});

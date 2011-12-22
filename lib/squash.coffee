@@ -1,2 +1,3 @@
-exports.Squash = class
+module.exports =
+  Screen: require './screen'
 

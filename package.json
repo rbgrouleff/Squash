@@ -1,21 +1,22 @@
 {
-  'name': 'squash',
-  'description': 'A 2D rendering engine',
-  'keywords': ['html5', '2D', '2D rendering'],
-  'author': 'Rasmus Bang Grouleff <rasmus@nerdd.dk>',
-  'main': 'lib/squash.coffee',
-  'version': '0.0.1-dev',
-  'homepage': 'https://github.com/rbgrouleff/squash',
-  'bugs': 'https://github.com/rbgrouleff/squash/issues',
-  'repository': {
-    'type': 'git',
-    'url': 'git://github.com/rbgrouleff/Squash.git'
+  "name": "squash",
+  "description": "A 2D rendering engine",
+  "keywords": ["html5", "2D", "2D rendering"],
+  "author": "Rasmus Bang Grouleff <rasmus@nerdd.dk>",
+  "main": "lib/squash.coffee",
+  "version": "0.0.1-dev",
+  "homepage": "https://github.com/rbgrouleff/squash",
+  "bugs": "https://github.com/rbgrouleff/squash/issues",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rbgrouleff/Squash.git"
   },
-  'devDependencies': {
-    'stitch': '0.3.2',
-    'janitor': '0.1.1'
+  "devDependencies": {
+    "stitch": "0.3.2",
+    "janitor": "0.1.1",
+    "jsdom": "0.2.10"
   },
-  'dependencies': {
-    'coffee-script': '1.2.0'
+  "dependencies": {
+    "coffee-script": "1.2.0"
   }
 }
