@@ -13,8 +13,7 @@
   },
   "devDependencies": {
     "stitch": "0.3.2",
-    "janitor": "0.1.1",
-    "jsdom": "0.2.10"
+    "express": "2.5.2",
   },
   "dependencies": {
     "coffee-script": "1.2.0"
