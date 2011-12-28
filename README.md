@@ -23,7 +23,7 @@ Feel free to suggest improvements!
 ```coffeescript
 canvas = document.createElement 'canvas'
 screen = new Screen canvas
-scene = Screen.buildScene 'map.gif', ['texture1.gif', 'texture2.gif]
+scene = Screen.buildScene 'map.gif', ['texture1.gif', 'texture2.gif']
 sprite = new Sprite 'sprites.gif', offset_x, offset_y, width, height
 scene.render sprite, x_pos, y_pos
 ```
