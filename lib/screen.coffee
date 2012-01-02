@@ -5,5 +5,13 @@ module.exports = class Screen
     @context = @canvas.getContext('2d')
 
   buildScene: ->
-    new Scene(@context)
+    new Scene(@, @context)
 
+  setCurrentScene: (scene) ->
+    @current_scene = scene
+
+  redraw: (time_lapsed) ->
+    @current_scene.redraw()
+
+  clear: ->
+    @context.clearRect 0, 0, @canvas.width, @canvas.height

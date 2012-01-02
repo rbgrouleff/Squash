@@ -16,9 +16,9 @@ module.exports = class Sprite
     ctx.drawImage image, @offset_x, @offset_y, @width, @height, 0, 0, @width, @height
     @drawCallback?()
 
-  draw: (context, x, y) ->
+  draw: (scene, x, y) ->
     if @image_complete
-      context.drawImage @img, x, y
+      scene.draw @img, x, y
     else
       @drawCallback = =>
-        context.drawImage @img, x, y
+        scene.draw @img, x, y

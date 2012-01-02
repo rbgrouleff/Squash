@@ -1,5 +1,9 @@
 module.exports = class Scene
-  constructor: (@context) ->
+  constructor: (@screen, @context) ->
+    @sprites = []
 
-  render: (sprite, x, y) ->
-    sprite.draw @context, x, y
+  draw: (image, x, y) ->
+    @context.drawImage image, x, y
+
+  clear: ->
+    @screen.clear()
