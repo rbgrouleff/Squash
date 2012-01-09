@@ -8,9 +8,12 @@ img = new Image
 img.src = '/images/simple_sprite.png'
 window.sprite = new Squash.Sprite img, 0, 0, 20, 20
 
-@x = 90
+@x = 0
 @y = 90
-sprite.draw scene, @x, @y
+
+sprite.setPosition(@x, @y)
+scene.addSprite sprite
+scene.redraw()
 
 window.timer = new Squash.Timer
 
@@ -21,10 +24,9 @@ timer.registerCallback (timeSinceLastTick) =>
     console.log "FPS: #{@ticks}"
     @ms = 0
     @ticks = 0
-    scene.clear()
-    @x = @x + 10
-    sprite.draw scene, @x, @y
+    sprite.move 10, 0
   else
     @ms += timeSinceLastTick
     @ticks += 1
+  scene.redraw()
 timer.start()

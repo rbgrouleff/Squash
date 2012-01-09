@@ -8,6 +8,14 @@ module.exports = class Sprite
     else
       @initSprite(image)
 
+  setPosition: (x,y) ->
+    @x = x
+    @y = y
+
+  move: (x,y) ->
+    @x = @x + x
+    @y = @y + y
+
   initSprite: (image) ->
     @img = document.createElement 'canvas'
     @img.width = @width
@@ -16,9 +24,9 @@ module.exports = class Sprite
     ctx.drawImage image, @offset_x, @offset_y, @width, @height, 0, 0, @width, @height
     @drawCallback?()
 
-  draw: (scene, x, y) ->
+  draw: (context) ->
     if @image_complete
-      scene.draw @img, x, y
+      context.drawImage @img, @x, @y
     else
       @drawCallback = =>
-        scene.draw @img, x, y
+        context.drawImage @img, @x, @y
