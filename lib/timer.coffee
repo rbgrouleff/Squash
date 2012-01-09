@@ -1,4 +1,5 @@
 requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame
+
 module.exports = class Timer
   constructor: ->
     @callbacks = []
