@@ -5,12 +5,12 @@ module.exports = class Scene
   addSprite: (sprite) ->
     @sprites.push sprite
 
+  removeSprite: (sprite) ->
+    @sprites = (s for s in @sprites when s isnt sprite)
+
   redraw: ->
     @screen.clear()
     sprite.draw @context for sprite in @sprites
-
-  draw: (image, x, y) ->
-    @context.drawImage image, x, y
 
   clear: ->
     @screen.clear()
