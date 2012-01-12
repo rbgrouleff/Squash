@@ -1,4 +1,5 @@
 window.Squash = require 'squash'
+window.Logger = require 'debug'
 
 screen = new Squash.Screen document.getElementById('canvas')
 
@@ -17,11 +18,12 @@ scene.addSprite sprite
 
 window.timer = screen.getTimer()
 
+timer.registerCallback new Logger().tick
+
 @ticks = 0
 @ms = 0
 timer.registerCallback (timeSinceLastTick) =>
   if @ms + timeSinceLastTick > 1000
-    console.log "FPS: #{@ticks}"
     @ms = 0
     @ticks = 0
     sprite.move 10, 0
