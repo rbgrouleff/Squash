@@ -13,19 +13,48 @@ Since sprites are a central part of the rendering engine, I stuck
 with Squash because it is a danish soft drink (though it is made with
 oranges and has no similarity to Sprite).
 
-## Usage
+## Progress
 
-Since I haven't written any code yet, this is just a vague sketch of how
-I imagine it should be used.
+So far I've got basic rendering of sprites and redrawing up and running. See under
+**usage** how to do that.
 
-Feel free to suggest improvements!
+Next up is setting backgrounds on scenes. The way I imagine this is done
+is something like this:
 
 ```coffeescript
+tiles =
+  'FF0000': new Squash.Tile(sprite_sheet, offset_x, offset_y, width, height)
+  '00FF00': new Squash.Tile(sprite_sheet, offset_x_2, offset_y_2, width, height)
+map = new Squash.Map '/images/map.png', tiles
+scene.setBackground map
+```
+
+As always - since this hasn't been coded up yet - feel free to suggest improvements!
+
+## Usage
+
+```coffeescript
+Squash = require 'squash'
 canvas = document.createElement 'canvas'
-screen = new Screen canvas
-scene = Screen.buildScene 'map.gif', ['texture1.gif', 'texture2.gif']
-sprite = new Sprite 'sprites.gif', offset_x, offset_y, width, height
-scene.render sprite, x_pos, y_pos
+screen = new Squash.Screen canvas
+scene = screen.buildScene
+
+sprite_sheet = new Image
+sprite_sheet.src = '/images/sprite_sheet.png'
+sprite = new Squash.Sprite sprite_sheet, offset_x, offset_y, width, height
+sprite.setPosition x, y
+
+scene.addSprite sprite
+
+timer = screen.getTimer()
+@ms = 0
+timer.registerCallback (timeSinceLastTick) =>
+  if @ms + timeSinceLastTick > 1000
+    @ms = 0
+    sprite.move 10, 0
+  else
+    @ms += timeSinceLastTick
+timer.start()
 ```
 
 ## License
