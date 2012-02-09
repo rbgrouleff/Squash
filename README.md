@@ -29,6 +29,16 @@ map = new Squash.Map '/images/map.png', tiles
 scene.setBackground map
 ```
 
+Before I throw myself at the background, I think I'll do a little sprite
+sheet class first:
+
+```coffeescript
+sheet = new Squash.SpriteSheet img_path, tile_width, tile_height
+
+new Squash.Tile sheet, col_no, row_no # Default to height = width = 1
+
+new Squash.Tile sheet, col_no_other, row_no_other, width, height
+```
 As always - since this hasn't been coded up yet - feel free to suggest improvements!
 
 ## Usage
